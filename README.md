@@ -26,4 +26,29 @@ It allows users to:
 - **Logout:** Users can log out, ending the session.  
 - **Session Protection:** All CRUD pages are protected using PHP sessions.  
 - **Database Users Table:** Stores registered users with hashed passwords (MD5).  
-- **Test User:**  
+- **Test User:**
+- 
+---
+
+## Installation Instructions
+1. Clone this repository:  
+2. Move the folder to your **XAMPP `htdocs` directory**.  
+3. Open **phpMyAdmin** and import the provided `database.sql` or manually create tables:  
+
+```sql
+CREATE TABLE students (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50),
+    email VARCHAR(50),
+    phone VARCHAR(15)
+);
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL,
+    password VARCHAR(255) NOT NULL
+);
+
+INSERT INTO users (username, password) VALUES ('admin', MD5('12345'));
+http://localhost/student_crud/login.php
+
